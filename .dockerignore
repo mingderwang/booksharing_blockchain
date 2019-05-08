@@ -1,0 +1,5 @@
+Dockerfile
+server
+src/composer.lock
+src/composer.json
+docker-compose.yml

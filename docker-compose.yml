@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  tokenissuer:
+    build: ./server
+#    restart: always
+    ports:
+      - 1337:1337
+    networks:
+      - web
+
+  app:
+    build: . 
+#    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - "composer"
+    links:
+      - "tokenissuer"
+    networks:
+      - web
+
+  composer:
+    image: composer:latest
+    command: install
+    volumes:
+      - ./src:/app
+
+networks:
+  web:
+    external: true

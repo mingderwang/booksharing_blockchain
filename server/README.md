@@ -1,0 +1,63 @@
+# 開發環境 node.js
+```
+$ yarn install
+$ yarn dev
+```
+# console 回音
+* http://localhost:1337/graphql
+graphQL query
+```
+{
+  issueToken(address: "0x5842d94A698d625857993859ac5b380dC3e5C3eA") {
+    address
+    token
+    status
+  }
+}
+```
+結果 (但他是馬上回, 沒等 confirm)
+```
+{
+  "data": {
+    "issueToken": {
+      "address": "0x5842d94A698d625857993859ac5b380dC3e5C3eA",
+      "token": 1,
+      "status": true
+    }
+  }
+}
+```
+成功 confirm 後, console.log 輸出
+```
+{ blockHash:
+   '0xb3503c1b096a44894e9e11e3a34eb112cbf8abdeca188765452f9fbc2cf47d16',
+  blockNumber: 4343588,
+  contractAddress: null,
+  cumulativeGasUsed: 689609,
+  from: '0x5b781f44D45091feED513b585047142Ec3F1aB29',
+  gasUsed: 38777,
+  logs:
+   [ { address: '0x6a86EE9373c16ae44022E6DafDa62D300e4EFc0b',
+       blockHash:
+        '0xb3503c1b096a44894e9e11e3a34eb112cbf8abdeca188765452f9fbc2cf47d16',
+       blockNumber: 4343588,
+       data:
+        '0x0000000000000000000000000000000000000000000000000000000000000001',
+       logIndex: 3,
+       removed: false,
+       topics: [Array],
+       transactionHash:
+        '0x895bb7935bc5ae6b9f665fa25dcf5d09ab326b773b1cd18d0dc1206f4f4ccf7d',
+       transactionIndex: 6,
+       id:
+        'log_0x11525b0be29aa671635c07c57a8f660cccebc3c95135344643fc60bfb27653b9' } ],
+  logsBloom:
+   '0x00000000080002000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000010000004000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000002000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000',
+  status: true,
+  to: '0x6a86EE9373c16ae44022E6DafDa62D300e4EFc0b',
+  transactionHash:
+   '0x895bb7935bc5ae6b9f665fa25dcf5d09ab326b773b1cd18d0dc1206f4f4ccf7d',
+  transactionIndex: 6,
+  nonce: undefined,
+  gas: undefined }
+  ```
